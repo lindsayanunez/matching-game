@@ -5,9 +5,7 @@ Classic Matching Game
 ### How to play
 
 *The goal of the game is match
-* Clicking on tiles will turn them over so that you can see what lies on them.
-* Your goal is to match two tiles of the same type at a time.
-* Then try to match all pairs in as minimum moves as possible.
+
 
 
 ### Resources Used
