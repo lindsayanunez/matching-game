@@ -4,7 +4,8 @@ Classic Matching Game
 
 ### How to play
 
-*The goal of the game is match
+*The deck has 16 cards with 8 pairs. The goal of the game is test your memory to find all the pairs.
+*Click on the each card to turn over the card.
 
 
 
