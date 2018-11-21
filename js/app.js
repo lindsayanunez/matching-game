@@ -147,9 +147,9 @@ function modal(){
 function finalStats(){
   let modalStats = document.querySelector('.modal-stat');
   let starCount = document.querySelector('.stars').childElementCount;
-
+  let finalTime = document.querySelector('#timer').textContent;
   modalStats.innerHTML = "You won the game with " + moves +
-    " moves and " +starCount+ " stars. Great job!";
+    " moves and " +starCount+ " stars. Your time was " + finalTime + ". Great job!";
 }
 
 document.querySelector('.close-modal').addEventListener('click', () =>{
