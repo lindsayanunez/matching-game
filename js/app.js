@@ -30,6 +30,8 @@ function shuffle(array) {
     return array;
 }
 
+//Adds Event Listeners to the cards and executes proceding functions if the card is clicked.
+
 deckOfCards.addEventListener('click', event =>{
     const tappedCard = event.target;
 
@@ -51,6 +53,7 @@ deckOfCards.addEventListener('click', event =>{
     }
 });
 
+//Checks if card is face up already
 function checkClick(tappedCard){
   return (
     tappedCard.classList.contains('card') &&
@@ -60,16 +63,18 @@ function checkClick(tappedCard){
   );
 }
 
-
+//Toggles the card to flip it over
 function tapCard(tappedCard){
   tappedCard.classList.toggle('open');
   tappedCard.classList.toggle('show');
 }
 
+//Adds card to a list of flipped cards
 function addFlippedCard(tappedCard){
   flippedCards.push(tappedCard);
 }
 
+//Checks to see if the two flipped cards are a match
 function checkForPair(){
   if(
       flippedCards[0].firstElementChild.className ===
@@ -89,18 +94,21 @@ function checkForPair(){
   }
 }
 
+//Updates move count if attempt at a pair is made
 function addAttemptedPair(){
   moves++;
   const movesDisplay = document.getElementById('moves');
   movesDisplay.innerHTML = moves;
 }
 
+//Checks move count in order to asses stars
 function checkScore(){
   if (moves === 8 || moves === 16){
     loseStar();
   }
 }
 
+//Changes star count if too many moves are made
 function loseStar(){
   const stars = document.querySelectorAll('.stars li');
   for (star of stars){
@@ -110,12 +118,16 @@ function loseStar(){
     }
   }
 }
+
+//Starts & displays the timer the timer
 function startTimer(){
   timerId = setInterval(() => {
     time++;
     displayTimer();
   }, 1000);
 }
+
+//renders the timer in the DOM & converts the milisecond count to readalbe time
 function displayTimer(){
   const gameTime = document.getElementById('timer');
   const minutes = Math.floor(time/60);
@@ -126,24 +138,26 @@ function displayTimer(){
   gameTime.innerHTML=`${minutes}:${seconds}`;
 }
 
+//Stops the timer
 function stopTimer(){
   clearInterval(timerId);
 }
 
 ///modal
 
+//Executes functions to signal the has been won to the user.
 function gameWon(){
   stopTimer();
   modal();
   finalStats();
 }
 
+//Toggles the modal in and out of view
 function modal(){
   const modal = document.querySelector('.modal');
       modal.classList.toggle('duringGame');
-
 }
-
+ //Displays the final stars and time in the modal
 function finalStats(){
   let modalStats = document.querySelector('.modal-stat');
   let starCount = document.querySelector('.stars').childElementCount;
@@ -152,22 +166,26 @@ function finalStats(){
     " moves and " +starCount+ " stars. Your time was " + finalTime + ". Great job!";
 }
 
+//Listens for the clicking of the X button
 document.querySelector('.close-modal').addEventListener('click', () =>{
   modal();
 })
 
+//Listens for the clicking of the reset button
 document.querySelector('.resetGame').addEventListener('click', () =>{
   playAgain();
   toggleAllCards();
   modal();
   })
 
+//Listens to the clicking of the reset button
 document.querySelector('.newGame').addEventListener('click', () =>{playAgain(); toggleAllCards();
 })
 
 
 //RESETTING THE GAME
 
+//Executes all the functions need to start a new game
 function playAgain(){
   newTime();
   newMoves();
@@ -176,6 +194,7 @@ function playAgain(){
   pairs = 0;
 }
 
+//Resets time
 function newTime(){
   timerOff = true;
   time = 0;
@@ -183,12 +202,14 @@ function newTime(){
   displayTimer();
 }
 
+//Resets moves
 function newMoves(){
   moves = 0;
   const movesDisplay = document.getElementById('moves');
   movesDisplay.innerHTML = moves;
 }
 
+//Resets stars
 function newStars(){
   const stars = document.querySelectorAll('.stars li');
   for (star of stars){
@@ -199,6 +220,7 @@ function newStars(){
   }
 }
 
+//Turns all of the cards over
 function toggleAllCards(){
   const cards = document.querySelectorAll('#deck li');
     for(let card of cards){
