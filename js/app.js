@@ -204,6 +204,7 @@ function toggleAllCards(){
     for(let card of cards){
       card.className='card';
     }
+    flippedCards = [];
   }
 
 //   Resources Used
