@@ -8,6 +8,10 @@ Classic Matching Game
 *Click on the each card to turn over the card.
 
 
+###Dependencies
+* [Font Awesome](https://fontawesome.com/)
+* [JQuery](https://jquery.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
 ### Resources Used
 
