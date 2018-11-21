@@ -160,10 +160,23 @@ function modal(){
  //Displays the final stars and time in the modal
 function finalStats(){
   let modalStats = document.querySelector('.modal-stat');
-  let starCount = document.querySelector('.stars').childElementCount;
   let finalTime = document.querySelector('#timer').textContent;
-  modalStats.innerHTML = "You won the game with " + moves +
+  let finalMoves = document.querySelector('#moves').textContent +1;
+  let starCount = countStars();
+
+  modalStats.innerHTML = "You won the game with " + finalMoves +
     " moves and " +starCount+ " stars. Your time was " + finalTime + ". Great job!";
+}
+
+function countStars(){
+    stars = document.querySelectorAll('.stars li');
+    starCount = 0;
+    for (star of stars) {
+        if (star.style.display !== 'none') {
+            starCount++;
+        }
+    }
+    return starCount;
 }
 
 //Listens for the clicking of the X button
