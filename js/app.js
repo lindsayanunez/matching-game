@@ -161,10 +161,9 @@ function modal(){
 function finalStats(){
   let modalStats = document.querySelector('.modal-stat');
   let finalTime = document.querySelector('#timer').textContent;
-  let finalMoves = document.querySelector('#moves').textContent +1;
   let starCount = countStars();
 
-  modalStats.innerHTML = "You won the game with " + finalMoves +
+  modalStats.innerHTML = "You won the game with "  + (moves + 1) +
     " moves and " +starCount+ " stars. Your time was " + finalTime + ". Great job!";
 }
 
