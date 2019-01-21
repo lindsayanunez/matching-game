@@ -38,7 +38,7 @@ html {
      flex-wrap: wrap;
      justify-content: space-between;
      align-items: center;
-     margin: 0 0 3em;
+     margin: 1em 2em 3em;
 }
  #deck .card {
      height: 125px;
@@ -49,6 +49,7 @@ html {
      border-radius: 8px;
      cursor: pointer;
      display: flex;
+     flex-wrap: wrap;
      justify-content: center;
      align-items: center;
      box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
@@ -59,12 +60,12 @@ html {
      cursor: default;
 }
  #deck .card.show {
-     font-size: 33px;
+     font-size: 50px;
 }
  #deck .card.match {
      cursor: default;
      background: #02ccba;
-     font-size: 33px;
+     font-size: 50px;
 }
 /* * Styles for the Score Panel */
  .score-panel {
@@ -98,12 +99,16 @@ html {
      left:0;
 }
  .modal-content{
-     height:300px;
+     min-height:300px;
      width:50%;
-     margin:auto;
      background-color:white;
-     position: relative;
-     top:20%;
+     position: absolute;
+     top:30px;
+     left: 0;
+     right: 0;
+     margin-left: auto;
+     margin-right: auto;
+
      border-radius: 10px;
 }
  .modal-heading{
@@ -124,8 +129,9 @@ html {
      cursor:pointer;
 }
  .modal-heading button{
-     position: relative;
-     left:40%;
+     display:block;
+         margin-left: auto;
+          margin-right: auto;
      width: 10em;
      height:3em;
      background-color:#02ccba;
@@ -139,6 +145,119 @@ html {
      display:none;
 }
 
+
+/********************Media Queries*******************/
+
+@media screen and (max-width: 670px) {
+     #deck {
+          width: 500px;
+          min-height: 550px;
+     }
+     .score-panel {
+          max-width: 500px;
+     }
+     #deck .card {
+          width: 100px;
+          height:  100px;
+     }
+     #deck .card.show {
+          font-size:  50px;
+     }
+     #deck .card.match {
+          font-size:  50px;
+     }
+}
+
+@media screen and (max-width: 550px) {
+     #deck {
+          width: 450px;
+          min-height: 500px;
+     }
+     .score-panel {
+          max-width: 450px;
+     }
+     #deck .card {
+          width: 80px;
+          height:  80px;
+     }
+     #deck .card.show {
+          font-size:  40px;
+     }
+      #deck .card.match {
+          font-size:  40px;
+     }
+      .close-modal{
+          padding: .5em;
+          position: relative;
+          left:90%;
+     }
+      .modal-heading button{
+          position: relative;
+          left:10%;
+     }
+}
+
+@media screen and (max-width: 450px) {
+     #deck {
+          width: 340px;
+          min-height: 380px;
+          padding: 15px;
+     }
+     .score-panel {
+          max-width: 340px;
+     }
+     #deck .card {
+          width: 70px;
+          height:  70px;
+     }
+     #deck .card.show {
+          font-size:  40px;
+     }
+      #deck .card.match {
+          font-size:  40px;
+     }
+     .close-modal{
+          padding: .5em;
+          position: relative;
+          left:90%;
+     }
+      .modal-heading button{
+          width: 8em;
+          height:2em;
+
+     }
+}
+
+@media screen and (max-width: 330px) {
+     #deck {
+          width: 300px;
+          min-height: 340px;
+     }
+     .score-panel {
+          max-width: 300px;
+     }
+     #deck .card {
+          width: 60px;
+          height:  60px;
+     }
+     #deck .card.show {
+          font-size:  20px;
+     }
+      #deck .card.match {
+          font-size:  20px;
+     }
+     .close-modal{
+          padding: .5em;
+          position: relative;
+          left:80%;
+     }
+      .modal-heading button{
+          width: 6em;
+          height:1.5em;
+          margin-bottom: 10px;
+
+     }
+}
 /*Resources Used
 
 Starter Code from Udacity Front-End Nanodegree -https://github.com/udacity/fend-project-memory-game
