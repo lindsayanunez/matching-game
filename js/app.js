@@ -8,7 +8,7 @@ let pairs = 0;
 const totalPairs = 8;
 
 function shuffleDeckOfCards(){
-  const cardsToShuffle =  Array.from(document.querySelectorAll('#deck li'));
+  const cardsToShuffle =  Array.from(document.querySelectorAll('.deck li'));
   // console.log('Cards to Shuffle:',cardsToShuffle);
   const shuffledCards = shuffle(cardsToShuffle);
   // console.log('Shuffled Cards:',shuffledCards);
@@ -234,7 +234,7 @@ function newStars(){
 
 //Turns all of the cards over
 function toggleAllCards(){
-  const cards = document.querySelectorAll('#deck li');
+  const cards = document.querySelectorAll('.deck li');
     for(let card of cards){
       card.className='card';
     }
