@@ -1,4 +1,4 @@
-const deckOfCards = document.getElementById('deck');
+const deckOfCards = document.querySelector('.deck');
 let flippedCards = [];
 let moves = 0;
 let timerOff = true;
